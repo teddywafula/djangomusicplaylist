@@ -1,0 +1,23 @@
+{% extends 'master.html' %}
+{% block title %} List Music {% endblock %}
+{% block content %}
+    <h1>List music</h1>
+        <div class="mycard">
+
+            {% for data in music %}
+                <ul>
+                <li>Item No: {{ forloop.counter }}</li>
+                <li>ID No: {{ data.id }}</li>
+                <li>Title: {{ data.title|slugify }}</li>
+                <li>Link: {{ data.link }}</li>
+                <li>Author: {{ data.authorName|slugify }}</li>
+                <li>Produced At Date: {{ data.producedAtDate }}</li>
+                <li>Created At: {{ data.createdAt }}</li>
+                <li>Updated At: {{ data.updatedAt }}</li>
+                    </ul>
+            {% endfor %}
+        </div>
+<div>
+    <p><a href="{% url 'createMusic' %}">Create music</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'master.html' %}
+{% block title %} Create Music {% endblock %}
+{% block content %}
+    <h1>Create music</h1>
+    <p>{{ music }}</p>
+    <p><a href="{% url 'listMusic' %}">Music list</a> </p>
+{% endblock %}
