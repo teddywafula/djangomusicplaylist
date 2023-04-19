@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import Music
 
 
 # Register your models here.
@@ -7,6 +6,7 @@ from .models import Music
 
 class MusicAdmin(admin.ModelAdmin):
     list_display = ('title', 'link', 'authorName', 'producedAtDate', 'createdAt', 'updatedAt')
+    prepopulated_fields = {"slug": ("title",)}
 
 
-admin.site.register(Music, MusicAdmin)
+# admin.site.register(Music, MusicAdmin)

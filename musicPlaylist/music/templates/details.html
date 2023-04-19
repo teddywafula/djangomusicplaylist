@@ -1,0 +1,20 @@
+{% extends 'master.html' %}
+{% block title %} Music Details{% endblock %}
+{% block content %}
+    <h1>Music details</h1>
+        <div class="mycard">
+
+            <ul>
+                <li>ID No: {{ data.id }}</li>
+                <li>Title: {{ data.title|slugify }}</li>
+                <li>Link: {{ data.link }}</li>
+                <li>Author: {{ data.authorName|slugify }}</li>
+                <li>Produced At Date: {{ data.producedAtDate }}</li>
+                <li>Created At: {{ data.createdAt }}</li>
+                <li>Updated At: {{ data.updatedAt }}</li>
+            </ul>
+        </div>
+<div>
+    <p><a href="{% url 'createMusic' %}">Create music</a></p>
+</div>
+{% endblock %}
